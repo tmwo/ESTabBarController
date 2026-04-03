@@ -196,6 +196,10 @@ internal extension ESTabBar /* Layout */ {
                 return subview1.frame.origin.x < subview2.frame.origin.x
         }
         
+        guard tabBarButtons.count >= tabBarItems.count else {
+                    return
+                }
+        
         if isCustomizing {
             for (idx, _) in tabBarItems.enumerated() {
                 tabBarButtons[idx].isHidden = false
